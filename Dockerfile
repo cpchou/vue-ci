@@ -5,9 +5,11 @@ RUN apt-get install -y tzdata
 RUN ln -fs /usr/share/zoneinfo/Asia/Taipei /etc/localtime
 RUN dpkg-reconfigure -f noninteractive tzdata
 
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+# RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 RUN apt-get install -y nodejs
-RUN npm install -g @vue/cli@3
+# RUN npm install -g @vue/cli@3
+RUN npm install -g @vue/cli@4
 
 RUN wget -O /usr/local/bin/gitlab-runner https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-linux-amd64
 RUN chmod +x /usr/local/bin/gitlab-runner
